@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # WordPress Container
   wordpress:
     image: wordpress:6.4-php8.2-apache
     container_name: vanti-wordpress
@@ -21,7 +20,6 @@ services:
       - vanti-network
     restart: unless-stopped
 
-  # MySQL Container
   mysql:
     image: mysql:8.0
     container_name: vanti-mysql
@@ -36,7 +34,6 @@ services:
       - vanti-network
     restart: unless-stopped
 
-  # PHPMyAdmin (برای مدیریت دیتابیس)
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: vanti-phpmyadmin
