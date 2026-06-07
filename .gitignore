@@ -1,0 +1,36 @@
+# Dependencies
+/vendor
+/node_modules
+composer.lock
+package-lock.json
+yarn.lock
+
+# WordPress
+/wp-admin
+/wp-content
+/wp-includes
+wp-config.php
+wp-config-local.php
+.htaccess
+sitemap.xml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
