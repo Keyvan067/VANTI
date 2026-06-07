@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # WordPress Container
+  wordpress:
+    image: wordpress:6.4-php8.2-apache
+    container_name: vanti-wordpress
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress123
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_TABLE_PREFIX: wp_
+    volumes:
+      - ./wordpress:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - vanti-network
+    restart: unless-stopped
+
+  # MySQL Container
+  mysql:
+    image: mysql:8.0
+    container_name: vanti-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress123
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - vanti-network
+    restart: unless-stopped
+
+  # PHPMyAdmin (برای مدیریت دیتابیس)
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: vanti-phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: wordpress
+      PMA_PASSWORD: wordpress123
+    depends_on:
+      - mysql
+    networks:
+      - vanti-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  vanti-network:
+    driver: bridge
