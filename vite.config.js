@@ -1,20 +1,34 @@
-import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
-import { resolve } from "path";
-
+import {defineConfig} from 'vite';
+import tailwindcss from '@tailwindcss/vite'
+import liveReload from 'vite-plugin-live-reload';
 export default defineConfig({
     plugins: [
         tailwindcss(),
+        // گوش به زنگ بودن برای تغییرات تمام فایل‌های PHP قالب
+        liveReload(__dirname + '/**/*.php'),
     ],
-
+    server: {
+        host: '0.0.0.0',
+        port: 5173,
+        cors: true,
+        strictPort: true,
+        hmr: {
+            host: 'localhost',
+            port: 5173,
+        },
+        watch: {
+            usePolling: true,
+            interval: 150,
+        }
+    },
     build: {
-        outDir: resolve(__dirname, "dist"),
-        emptyOutDir: true,
-
+        manifest: true,
+        outDir: 'dist',
         rollupOptions: {
-            input: {
-                app: resolve(__dirname, "resources/js/app.js"),
-            },
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js'
+            ],
         },
     },
 });

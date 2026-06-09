@@ -11,7 +11,6 @@ defined('ABSPATH') || exit;
 define('VANTI_PATH', get_template_directory());
 define('VANTI_URL', get_template_directory_uri());
 define('VANTI_VERSION', '1.0.0');
-
 /*
 |--------------------------------------------------------------------------
 | Composer
@@ -36,11 +35,24 @@ set_error_handler(function ($errno, $errstr, $errfile, $errline) {
 set_exception_handler(function ($e) {
     error_log("[VANTI EXCEPTION] " . $e->getMessage());
 });
-
+add_action('admin_menu', function () {
+    add_menu_page(
+        'VANTI Debug',
+        'VANTI Debug',
+        'manage_options',
+        'vanti-debug',
+        function () {
+            include __DIR__ . '/debug-panel.php';
+        },
+        'dashicons-warning',
+        99
+    );
+});
 /*
 |--------------------------------------------------------------------------
 | Bootstrap
 |--------------------------------------------------------------------------
 */
-
-VANTI\Bootstrap::boot();
+if (file_exists(__DIR__ . '/app/Bootstrap.php')) {
+    require_once __DIR__ . '/app/Bootstrap.php';
+}

@@ -1,1 +1,80 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+    themes: light --default, dark --prefersdark, cupcake;
+}
+
+@source "../../index.php";
+@source "../../functions.php";
+@source "../../templates/**/*.php";
+@source "../../app/**/*.php";
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-md: var(--radius);
+}
+
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    prefersdark: true;
+    color-scheme: "dark";
+    --color-base-100: oklch(100% 0 0);
+    --color-base-200: oklch(98% 0 0);
+    --color-base-300: oklch(95% 0 0);
+    --color-base-content: oklch(21% 0.006 285.885);
+    --color-primary: oklch(58% 0.253 17.585);
+    --color-primary-content: oklch(98% 0.003 247.858);
+    --color-secondary: oklch(69% 0.17 162.48);
+    --color-secondary-content: oklch(94% 0.028 342.258);
+    --color-accent: oklch(86% 0.022 252.894);
+    --color-accent-content: oklch(26% 0 0);
+    --color-neutral: oklch(14% 0.005 285.823);
+    --color-neutral-content: oklch(92% 0.004 286.32);
+    --color-info: oklch(90% 0.058 230.902);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(90% 0.093 164.15);
+    --color-success-content: oklch(37% 0.077 168.94);
+    --color-warning: oklch(92% 0.12 95.746);
+    --color-warning-content: oklch(41% 0.112 45.904);
+    --color-error: oklch(89% 0.058 10.001);
+    --color-error-content: oklch(27% 0.105 12.094);
+    --radius-selector: 2rem;
+    --radius-field: 0.25rem;
+    --radius-box: 1rem;
+    --size-selector: 0.3125rem;
+    --size-field: 0.25rem;
+    --border: 0.5px;
+    --depth: 1;
+    --noise: 1;
+}
+
+@layer base {
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+        padding: 0;
+        margin: 0;
+        background: var(--color-red-800) !important;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+}

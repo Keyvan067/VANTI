@@ -30,6 +30,14 @@ class AssetManager
 
     public function enqueueFrontend(): void
     {
+        // Tailwind-->PROD MODE
+        wp_enqueue_style(
+            'tw-app',
+            VANTI_URL . 'resources/assets/output.css',
+            [],
+            VANTI_VERSION
+        );
+
         wp_enqueue_style(
             'vanti-main',
             $this->asset('resources/css/app.css'),
@@ -50,14 +58,14 @@ class AssetManager
     {
         wp_enqueue_style(
             'vanti-admin',
-            VANTI_URL . '/public/css/admin.css',
+            VANTI_URL . '/dist/css/admin.css',
             [],
             VANTI_VERSION
         );
 
         wp_enqueue_script(
             'vanti-admin',
-            VANTI_URL . '/public/js/admin.js',
+            VANTI_URL . '/dist/js/admin.js',
             [],
             VANTI_VERSION,
             true
