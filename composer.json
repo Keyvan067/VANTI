@@ -10,15 +10,11 @@
     }
   ],
   "require": {
-    "php": ">=7.4"
+    "php": ">=8.1"
   },
   "autoload": {
     "psr-4": {
-      "VANTI\\": "app/",
-      "VANTI\\Helpers\\": "app/Helpers/",
-      "VANTI\\Assets\\": "app/Assets/",
-      "VANTI\\WooCommerce\\": "app/WooCommerce/",
-      "VANTI\\Admin\\": "app/Admin/"
+      "VANTI\\": "app/"
     }
   }
 }
