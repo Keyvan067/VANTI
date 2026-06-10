@@ -1,0 +1,189 @@
+
+/* VARIABLE... */
+@font-face {
+    font-family: IRANYekanXVF;
+    src: url("./iranyekan-xpro/IRANYekanXVFaNumVF.woff") format("woff"),
+    url("./iranyekan-xpro/IRANYekanXVFaNumVF.woff2") format("woff2");
+}
+
+/* STATIC... */
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 100;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Thin.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Thin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 200;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-UltraLight.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-UltraLight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 300;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Light.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 500;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Medium.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 600;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-DemiBold.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-DemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 800;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-ExtraBold.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 900;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Black.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Black.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 950;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-ExtraBlack.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-ExtraBlack.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: 1000;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Heavy.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Heavy.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: bold;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Bold.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: IRANYekanXFaNum;
+    font-style: normal;
+    font-weight: normal;
+    src: url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Regular.woff") format("woff"),
+    url("./iranyekan-xpro/staticfonts/IRANYekanXFaNum-Regular.woff2") format("woff2");
+}
+
+/* ::::::::::::::::::::::::::::::::::::::
+            IRAN-SANS
+::::::::::::::::::::::::::::::::::::::::: */
+
+@font-face {
+    font-family: yekanbakh;
+    src: url("./yekanbakh/YekanBakh-VF.woff") format("woff"),
+    url("./yekanbakh/YekanBakh-VF.woff2") format("woff2");
+}
+
+/* ::::::::::::::::::::::::::::::::::::::
+            IRAN-SANS
+::::::::::::::::::::::::::::::::::::::::: */
+
+@font-face {
+    font-family: IRANSansXV;
+    font-style: normal;
+    font-weight: normal;
+    src: url("./iransans-xpro/IRANSansXV.woff") format("woff"),
+    url("./iransans-xpro/IRANSansXV.woff") format("woff2");
+}
+
+/* ::::::::::::::::::::::::::::::::::::::
+            IRAN-Yekan-Bakh-VF
+::::::::::::::::::::::::::::::::::::::::: */
+
+/* VARIABLE... */
+
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 200;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-Thin.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-Thin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 300;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-Light.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-Regular.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 500;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-SemiBold.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 600;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-Bold.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-Bold.woff2") format("woff2");
+}
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 700;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-ExtraBold.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-ExtraBold.woff2") format("woff2");
+}
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 800;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-Black.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-Black.woff2") format("woff2");
+}
+@font-face {
+    font-family: YekanBakhVF;
+    font-style: normal;
+    font-weight: 900;
+    src: url("./yekanbakh/woff/YekanBakhFaNum-ExtraBlack.woff") format("woff"),
+    url("./yekanbakh/woff2/YekanBakhFaNum-ExtraBlack.woff2") format("woff2");
+}
+
+/* ::::::::::::::::::::::::::::::::::::::
+                IRAN-SANS
+::::::::::::::::::::::::::::::::::::::::: */

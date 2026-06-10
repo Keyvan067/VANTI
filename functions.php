@@ -48,6 +48,12 @@ add_action('admin_menu', function () {
         99
     );
 });
+
+
+// استفاده از CDN به جای فایل محلی (مطمئن‌ترین روش)
+wp_enqueue_script('gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', array(), '3.12.5', true);
+wp_enqueue_script('gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', array('gsap-js'), '3.12.5', true);
+wp_enqueue_script('gsap-js2', get_template_directory_uri() . '/js/custom-gsap.js', array('gsap-js', 'gsap-st'), '1.0.0', true);
 /*
 |--------------------------------------------------------------------------
 | Bootstrap

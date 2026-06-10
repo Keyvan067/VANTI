@@ -1,6 +1,7 @@
 import {defineConfig} from 'vite';
 import tailwindcss from '@tailwindcss/vite'
 import liveReload from 'vite-plugin-live-reload';
+
 export default defineConfig({
     plugins: [
         tailwindcss(),
@@ -27,7 +28,11 @@ export default defineConfig({
         rollupOptions: {
             input: [
                 'resources/css/app.css',
-                'resources/js/app.js'
+                'resources/js/app.js',
+                //---GSAP---
+                'resources/js/gsap.min.js',
+                'resources/js/ScrollTrigger.min.js',
+                'resources/js/custom-gsap.js'
             ],
         },
     },

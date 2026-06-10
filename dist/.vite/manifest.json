@@ -1,13 +1,31 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BUa1AR5q.css",
+    "file": "assets/app-DyBopcef.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/ScrollTrigger.min.js": {
+    "file": "assets/ScrollTrigger.min-YzD1yKvf.js",
+    "name": "ScrollTrigger.min",
+    "src": "resources/js/ScrollTrigger.min.js",
     "isEntry": true
   },
   "resources/js/app.js": {
     "file": "assets/app-CzS7NIH9.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/custom-gsap.js": {
+    "file": "assets/custom-gsap-DlH-onGT.js",
+    "name": "custom-gsap",
+    "src": "resources/js/custom-gsap.js",
+    "isEntry": true
+  },
+  "resources/js/gsap.min.js": {
+    "file": "assets/gsap.min-mEpvuiY9.js",
+    "name": "gsap.min",
+    "src": "resources/js/gsap.min.js",
     "isEntry": true
   }
 }

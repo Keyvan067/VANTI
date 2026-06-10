@@ -440,7 +440,6 @@
         </div>
     </div>
 </div>
-
 <script>
     function airbnbSearchTabs() {
         return {
@@ -587,6 +586,254 @@
         }
     }
 </script>
+
+
+<!---------------------------------------------->
+
+
+<?php
+/**
+ * Header template
+ *
+ * @package VANTI
+ */
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> dir="rtl" lang="fa" data-theme="light">
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANTI</title>
+    <?php wp_head(); ?>
+</head>
+<style>
+
+</style>
+<body  <?php body_class('bg-background text-foreground selection:bg-primary selection:text-white'); ?>>
+<?php wp_body_open(); ?>
+<div id="bg-overlay" class="fixed inset-0 bg-black/25 opacity-0 pointer-events-none airbnb-timing z-40"></div>
+
+
+<header class="bg-base-100 border-b border-accent sticky top-0 w-full z-50 pt-4 pb-4 airbnb-timing" id="main-header">
+    <div class="max-w-7xl origin-center mx-auto px-6 relative flex flex-col items-center">
+        <div id="search-bar"
+             class="relative w-md h-[48px] bg-white border border-accent/50 rounded-full shadow-sm hover:shadow-md cursor-pointer airbnb-timing flex items-center overflow-hidden">
+            <div id="collapsed-view"
+                 class="w-full h-full flex items-center justify-between pl-8 pr-8 airbnb-timing opacity-100">
+                <div class="flex items-center text-xs font-bold text-base-content w-full justify-start gap-4">
+                    <span class="text-base-content font-bold truncate">دسته بندی کالاها</span>
+                    <span class="search-divider w-[1px] h-3 bg-gray-200 shrink-0"></span>
+                    <span class="text-gray-500 font-medium truncate">شگفت انگیز ها</span>
+                    <span class="search-divider w-[1px] h-3 bg-gray-200 shrink-0"></span>
+                    <span class="truncate text-gray-500 font-medium">جستوجو</span>
+                </div>
+            </div>
+
+            <div id="expanded-view"
+                 class="absolute inset-0 w-full h-full bg-base-200 rounded-full flex items-center opacity-0 pointer-events-none airbnb-timing">
+                <div data-section="main-category"
+                     class="search-section flex-auto h-full rounded-full flex flex-col justify-center pl-8 pr-8 relative z-10 hover:bg-gray-200/60 airbnb-timing">
+                    <span class="block text-[10px] text-nowrap tracking-wide text-base-content select-none">دنبال چی میگردی؟</span>
+                </div>
+                <div data-section="checkin-amazing"
+                     class="search-section flex-auto h-full rounded-full flex flex-col justify-center pl-6 pr-6 relative z-10 hover:bg-gray-200/60 airbnb-timing">
+                    <label class="block text-[10px] text-nowrap text-center tracking-wide text-base-content select-none">شگفت انگیزها</label>
+                    <span class="block text-xs text-gray-400 font-medium mt-0.5 truncate"></span>
+                    <div class="section-divider absolute right-0 top-1/4 bottom-1/4 w-[1px] bg-base-300 airbnb-timing"></div>
+                </div>
+                <div data-section="top-searching"
+                     class="search-section flex-auto h-full rounded-full flex flex-col justify-center pl-6 pr-6 relative z-10 hover:bg-gray-200/60 airbnb-timing">
+                    <label class="block text-[10px] text-nowrap tracking-wide text-base-content select-none">جستجو های پرطرفدار</label>
+                    <span class="block text-xs text-gray-400 font-medium mt-0.5 truncate">Add dates</span>
+                    <div class="section-divider absolute right-0 top-1/4 bottom-1/4 w-[1px] bg-base-300 airbnb-timing"></div>
+                </div>
+                <div data-section="guests2"
+                     class="search-section w-22 flex-auto h-full grow rounded-full flex flex-col justify-center relative z-10 hover:bg-gray-200/60">
+                    <label class="block text-[10px] text-nowrap tracking-wide text-base-content select-none"></label>
+                    <span class="block text-xs text-gray-400 font-medium mt-0.5 truncate"></span>
+                </div>
+            </div>
+
+            <div id="search-action-btn"
+                 class="absolute left-2 bg-[#FF385C] text-white rounded-full flex items-center justify-center transition-all duration-300 cubic-bezier(0.35, 0, 0.15, 1) z-20 shadow-sm"
+                 style="width: 32px; height: 32px;">
+                <div class="flex items-center justify-center gap-2 px-1">
+                    <svg xmlns="" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
+                         class="w-4 h-4 shrink-0">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                    </svg>
+                    <span id="search-btn-label"
+                          class="text-xs font-bold whitespace-nowrap hidden opacity-0 transition-opacity duration-200">Search</span>
+                </div>
+            </div>
+        </div>
+        <div id="search-dropdown-box"
+             class="absolute left-1/2 right-1/2 translate-x-[51%] top-20 w-full max-w-xl bg-white border border-accent/50 rounded-[32px] p-6 shadow-[0_24px_48px_rgba(0,0,0,0.1)] opacity-0 scale-95 pointer-events-none dropdown-animate z-50">
+            <div id="panel-main-category" class="hidden">
+                <h4 class="text-xs font-black text-gray-900 mb-4">Search by region</h4>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="border border-accent p-4 rounded-2xl hover:border-black airbnb-timing text-center text-xs font-bold cursor-pointer bg-base-200">
+                        I'm flexible
+                    </div>
+                    <div class="border border-accent p-4 rounded-2xl hover:border-black airbnb-timing text-center text-xs font-bold cursor-pointer bg-base-200">
+                        Europe
+                    </div>
+                    <div class="border border-accent p-4 rounded-2xl hover:border-black airbnb-timing text-center text-xs font-bold cursor-pointer bg-base-200">
+                        Middle East
+                    </div>
+                </div>
+            </div>
+            <div id="panel-dates" class="hidden text-center text-xs text-gray-500 py-4 font-medium">
+                Airbnb dual-calendar component goes here.
+            </div>
+            <div id="panel-guests" class="hidden">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h5 class="text-xs font-bold text-gray-900">Adults</h5>
+                        <p class="text-[11px] text-gray-400 mt-0.5">Ages 13 or above</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button class="w-8 h-8 rounded-full border border-accent flex items-center justify-center text-gray-600 hover:border-black text-lg font-light">
+                            -
+                        </button>
+                        <span class="text-xs font-bold text-base-content w-4 text-center">0</span>
+                        <button class="w-8 h-8 rounded-full border border-accent flex items-center justify-center text-gray-600 hover:border-black text-lg font-light">
+                            +
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<script>
+    const searchBar = document.getElementById('search-bar');
+    const collapsedView = document.getElementById('collapsed-view');
+    const expandedView = document.getElementById('expanded-view');
+    const searchActionBtn = document.getElementById('search-action-btn');
+    const searchBtnLabel = document.getElementById('search-btn-label');
+    const bgOverlay = document.getElementById('bg-overlay');
+    const mainHeader = document.getElementById('main-header');
+    const searchDropdownBox = document.getElementById('search-dropdown-box');
+    // const inputMainCategory = document.getElementById('input-main-category');
+    const searchSections = document.querySelectorAll('.search-section');
+
+    let isExpanded = false;
+
+    searchBar.addEventListener('click', (e) => {
+        if (isExpanded) return;
+        e.stopPropagation();
+        expandMenu();
+    });
+
+    function expandMenu() {
+        isExpanded = true;
+        searchBar.classList.remove('w-md', 'h-[48px]');
+        searchBar.classList.add('w-xl', 'h-[66px]', 'border-accent/40');
+        mainHeader.classList.add('pb-8');
+        collapsedView.classList.replace('opacity-100', 'opacity-0');
+        collapsedView.classList.add('pointer-events-none');
+        setTimeout(() => {
+            expandedView.classList.remove('opacity-0', 'pointer-events-none');
+            expandedView.classList.add('opacity-100');
+            // inputMainCategory.focus();
+            activateTab(document.querySelector('[data-section="main-category"]'));
+        }, 100);
+        searchActionBtn.style.width = '90px';
+        searchActionBtn.style.height = '48px';
+        searchActionBtn.classList.remove('left-2');
+        searchActionBtn.classList.add('left-3');
+        setTimeout(() => {
+            searchBtnLabel.classList.remove('hidden');
+            searchBtnLabel.classList.add('opacity-100');
+        }, 150);
+        bgOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        bgOverlay.classList.add('opacity-100');
+    }
+
+    searchSections.forEach(section => {
+        section.addEventListener('click', (e) => {
+            e.stopPropagation();
+            activateTab(section);
+        });
+    });
+
+    function activateTab(targetSection) {
+        searchSections.forEach(sec => {
+            sec.classList.remove('bg-white', 'shadow-[0_6px_20px_rgba(0,0,0,0.06)]', 'z-0');
+            const divider = sec.querySelector('.section-divider');
+            if (divider) divider.classList.remove('opacity-0');
+        });
+        targetSection.classList.add('bg-white', 'shadow-[0_6px_20px_rgba(0,0,0,0.06)]', 'z-0');
+        const currentDivider = targetSection.querySelector('.section-divider');
+        if (currentDivider) currentDivider.classList.add('opacity-0');
+        const prevSection = targetSection.previousElementSibling;
+        if (prevSection) {
+            const prevDivider = prevSection.querySelector('.section-divider');
+            if (prevDivider) prevDivider.classList.add('opacity-0');
+        }
+        switchDropdownContent(targetSection.getAttribute('data-section'));
+    }
+
+    function switchDropdownContent(sectionType) {
+        document.getElementById('panel-main-category').classList.add('hidden');
+        document.getElementById('panel-dates').classList.add('hidden');
+        document.getElementById('panel-guests').classList.add('hidden');
+        if (sectionType === 'main-category') {
+            document.getElementById('panel-main-category').classList.remove('hidden');
+        } else if (sectionType === 'checkin-amazing' || sectionType === 'top-searching') {
+            document.getElementById('panel-dates').classList.remove('hidden');
+        } else if (sectionType === 'guests') {
+            document.getElementById('panel-guests').classList.remove('hidden');
+        }
+        searchDropdownBox.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+        searchDropdownBox.classList.add('opacity-100', 'scale-100');
+    }
+
+    document.addEventListener('click', (e) => {
+        if (!isExpanded) return;
+        if (!searchBar.contains(e.target) && !searchDropdownBox.contains(e.target)) {
+            collapseMenu();
+        }
+    });
+
+    function collapseMenu() {
+        isExpanded = false;
+        searchBtnLabel.classList.remove('opacity-100');
+        searchBtnLabel.classList.add('opacity-0');
+        setTimeout(() => {
+            searchBtnLabel.classList.add('hidden');
+        }, 100);
+        searchActionBtn.style.width = '32px';
+        searchActionBtn.style.height = '32px';
+        searchActionBtn.classList.remove('left-3');
+        searchActionBtn.classList.add('left-2');
+        searchDropdownBox.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        searchDropdownBox.classList.remove('opacity-100', 'scale-100');
+        bgOverlay.classList.add('opacity-0', 'pointer-events-none');
+        bgOverlay.classList.remove('opacity-100');
+        expandedView.classList.add('opacity-0', 'pointer-events-none');
+        expandedView.classList.remove('opacity-100');
+        searchBar.classList.remove('w-xl', 'h-[66px]', 'border-accent/40');
+        searchBar.classList.add('w-md', 'h-[48px]');
+        mainHeader.classList.remove('pb-8');
+        searchSections.forEach(sec => {
+            sec.classList.remove('bg-white', 'shadow-[0_6px_20px_rgba(0,0,0,0.06)]', 'z-30');
+            const divider = sec.querySelector('.section-divider');
+            if (divider) divider.classList.remove('opacity-0');
+        });
+        setTimeout(() => {
+            collapsedView.classList.remove('opacity-0', 'pointer-events-none');
+            collapsedView.classList.add('opacity-100');
+        }, 150);
+    }
+</script>
+
+
 
 
 

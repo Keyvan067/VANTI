@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark, cupcake;
+    themes: light;
 }
 
 @source "../../index.php";
@@ -9,12 +9,11 @@
 @source "../../templates/**/*.php";
 @source "../../app/**/*.php";
 
-
 @plugin "daisyui/theme" {
     name: "light";
-    default: true;
-    prefersdark: true;
-    color-scheme: "dark";
+    default: false;
+    prefersdark: false;
+    /*color-scheme: "light";*/
     --color-base-100: oklch(100% 0 0);
     --color-base-200: oklch(98% 0 0);
     --color-base-300: oklch(95% 0 0);
@@ -45,16 +44,43 @@
     --noise: 1;
 }
 
+:root {
+    color-scheme: light dark;
+    --font-IRANYekanXVF: IRANYekanXVF, sans-serif, tahoma;
+    --font-IRANYekanXFaNum: IRANYekanXFaNum, sans-serif, tahoma;
+    --font-YekanBakhVF: YekanBakhVF, sans-serif, tahoma;
+}
+
 @layer base {
     body {
-        font-family: system-ui, -apple-system, sans-serif;
         padding: 0;
         margin: 0;
-        background: var(--color-base-100);
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+    }
+
+    body {
+        font-family: var(--font-IRANYekanXVF);
+        -moz-font-feature-settings: "ss03";
+        -webkit-font-feature-settings: "ss03";
+        font-feature-settings: "ss03";
+        font-variation-settings: "wght" 300, "dots" 1;
+    }
+
+    @supports (font-variation-settings: normal) {
+        body {
+            font-family: var(--font-IRANYekanXVF);
+            -moz-font-feature-settings: "ss03";
+            -webkit-font-feature-settings: "ss03";
+            font-feature-settings: "ss03";
+            font-variation-settings: "wght" 300, "dots" 1;
+        }
     }
 
     ul, li {
-        list-style: none;
+        list-style: none
     }
 
     a {
@@ -67,21 +93,15 @@
 }
 
 @layer components {
-    .card-default {
-        @apply rounded-4xl bg-base-100 border border-accent/40 p-5 shadow-md shadow-accent/20 ;
-        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.02));
-        transform-origin: top center;
-        /*transform: none;*/
-        /*pointer-events: none;*/
-        /*clip-path: inset(0 round 32px);*/
-        /*opacity: 1;*/
-        /*transform-origin: top center;*/
-        contain: layout paint;
-        /*padding-inline-end: calc(1.5rem * 0.5);*/
-        /*padding-inline-start: 10px;*/
-    }
-
-    .card-default-height {
-        max-height: calc(100vh - 180px);
+    .search-section:not(.is-active):hover::after {
+        content: "";
+        background: #ebebeb;
+        width: calc(100% + 60px);
+        position: absolute;
+        top: 0;
+        left: -30px;
+        z-index: 5;
+        height: 100%;
+        border-radius: 50px;
     }
 }
