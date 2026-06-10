@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @plugin "daisyui" {
     themes: light --default, dark --prefersdark, cupcake;
 }
@@ -54,5 +55,33 @@
 
     ul, li {
         list-style: none;
+    }
+
+    a {
+        @apply cursor-pointer;
+    }
+
+    button {
+        @apply cursor-pointer;
+    }
+}
+
+@layer components {
+    .card-default {
+        @apply rounded-4xl bg-base-100 border border-accent/40 p-5 shadow-md shadow-accent/20 ;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.02));
+        transform-origin: top center;
+        /*transform: none;*/
+        /*pointer-events: none;*/
+        /*clip-path: inset(0 round 32px);*/
+        /*opacity: 1;*/
+        /*transform-origin: top center;*/
+        contain: layout paint;
+        /*padding-inline-end: calc(1.5rem * 0.5);*/
+        /*padding-inline-start: 10px;*/
+    }
+
+    .card-default-height {
+        max-height: calc(100vh - 180px);
     }
 }

@@ -4,6 +4,12 @@
 # Node
 /node_modules
 
+# Styles
+/dist
+
+# Debuger
+/storage/*.log
+
 # IDE
 .idea/
 .vscode/
