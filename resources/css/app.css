@@ -90,6 +90,15 @@
     button {
         @apply cursor-pointer;
     }
+
+    #logo img {
+        width: 75px;
+    }
+
+    img {
+        height: auto;
+        object-fit: contain;
+    }
 }
 
 @layer components {

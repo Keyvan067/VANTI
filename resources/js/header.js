@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -62,11 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (sectionType === 'p_1') {
             // تب اول (راست‌ترین تب): پنل دقیقاً زیر تب چسبیده به سمت راست کادر (با تراز ۱۶ پیکسل فاصله مچ)
-            return Math.max(16, sectionRight - 10);
+            return Math.max(16, sectionRight + 16);
         } else if (sectionType === 'p_3') {
             // تب آخر (چپ‌ترین تب نزدیک دکمه سرچ): پنل نباید از سمت چپ کادر بیرون بزند
             // کل عرض منهای عرض پنل منهای فاصله ایمنی دکمه اکشن سرچ
-            return barWidth - targetWidth - 16;
+            return barWidth - targetWidth + 45;
         } else {
             // تب میانی (p_2): کاملاً متمرکز زیر تب خودش همراستا با مرکز ثقل تب
             const centerRight = sectionRight + (sectionWidth / 2) - (targetWidth / 2);
@@ -254,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.fromTo(searchDropdownBox,
                 {opacity: 0, scale: 0.94, y: -10, right: targetRight, width: targetWidth, height: "fit-content"},
                 {
-                    duration: 0.4,
+                    duration: 0.1,
                     opacity: 1,
                     scale: 1,
                     y: 0,

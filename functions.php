@@ -27,14 +27,6 @@ if (file_exists(VANTI_PATH . '/vendor/autoload.php')) {
 |--------------------------------------------------------------------------
 */
 
-set_error_handler(function ($errno, $errstr, $errfile, $errline) {
-    error_log("[VANTI PHP ERROR] $errstr in $errfile:$errline");
-    return true; // جلوگیری از crash
-});
-
-set_exception_handler(function ($e) {
-    error_log("[VANTI EXCEPTION] " . $e->getMessage());
-});
 add_action('admin_menu', function () {
     add_menu_page(
         'VANTI Debug',
@@ -53,7 +45,7 @@ add_action('admin_menu', function () {
 // استفاده از CDN به جای فایل محلی (مطمئن‌ترین روش)
 wp_enqueue_script('gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', array(), '3.12.5', true);
 wp_enqueue_script('gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', array('gsap-js'), '3.12.5', true);
-wp_enqueue_script('gsap-js2', get_template_directory_uri() . '/js/custom-gsap.js', array('gsap-js', 'gsap-st'), '1.0.0', true);
+wp_enqueue_script('gsap-js2', get_template_directory_uri() . '/resources/js/custom-gsap.js', array('gsap-js', 'gsap-st'), '1.0.0', true);
 /*
 |--------------------------------------------------------------------------
 | Bootstrap
