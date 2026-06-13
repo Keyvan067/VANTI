@@ -4,6 +4,7 @@ use VANTI\Core\Application;
 use VANTI\Providers\AssetsProvider;
 use VANTI\Providers\ThemeProvider;
 use VANTI\Providers\WooCommerceProvider;
+use VANTI\Providers\ViewProvider;
 
 // ۱. لود کردن خودکار کلاس‌ها توسط کامپوزر (Autoloader)
 // چون این فایل در پوشه app قرار دارد، یک پوشه عقب می‌رویم تا به vendor برسیم.
@@ -30,7 +31,8 @@ $app = Application::getInstance();
 $providers = [
     AssetsProvider::class,
     ThemeProvider::class,
-    WooCommerceProvider::class, // پرووایدر جدید ووکامرس اضافه شد
+    WooCommerceProvider::class,
+    ViewProvider::class,
 ];
 
 // ۵. روشن کردن موتور قالب و اجرای چرخه حیات پرووایدرها

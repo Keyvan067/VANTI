@@ -10,7 +10,7 @@ class Setup
     {
         $this->addThemeSupports();
         $this->registerMenus();
-        $this->elementorCompatibility();
+//        $this->elementorCompatibility();
     }
 
     /**
@@ -30,26 +30,33 @@ class Setup
         add_theme_support('wc-product-gallery-lightbox');
         add_theme_support('wc-product-gallery-slider');
 
-        Logger::log('WooCommerce Theme Supports Activated.');
+        add_theme_support('custom-logo');
+        add_theme_support('automatic-feed-links');
+        add_theme_support('customize-selective-refresh-widgets');
+
+
+        //if (WP_DEBUG) {
+        //Logger::log('WooCommerce Theme Supports Activated.');
+        //}
     }
 
     protected function registerMenus(): void
     {
         register_nav_menus([
             'primary_menu' => __('منوی اصلی (هدر)', 'vanti'),
-            'footer_menu'  => __('منوی فوتر', 'vanti'),
+            'footer_menu' => __('منوی فوتر', 'vanti'),
         ]);
     }
 
     /**
      * ۲. هماهنگی‌ها و پپکربندی‌های اختصاصی برای صفحه ساز المنتور
      */
-    protected function elementorCompatibility(): void
-    {
-        // معرفی عرض پیش‌فرض کانتینر قالب به المنتور (اختیاری اما حرفه‌ای)
-        update_option('elementor_container_width', '1280');
-
-        // اضافه کردن پپکربندی‌های بیشتر المنتور در صورت نیاز
-        Logger::log('Elementor Theme Integration Initialized.');
-    }
+//    protected function elementorCompatibility(): void
+//    {
+//        // معرفی عرض پیش‌فرض کانتینر قالب به المنتور (اختیاری اما حرفه‌ای)
+//        update_option('elementor_container_width', '1280');
+//
+//        // اضافه کردن پپکربندی‌های بیشتر المنتور در صورت نیاز
+//        Logger::log('Elementor Theme Integration Initialized.');
+//    }
 }

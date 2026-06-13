@@ -39,16 +39,16 @@
     --radius-box: 1rem;
     --size-selector: 0.3125rem;
     --size-field: 0.25rem;
-    --border: 0.5px;
+    --border: 1px;
     --depth: 1;
     --noise: 1;
 }
 
 :root {
     color-scheme: light dark;
-    --font-IRANYekanXVF: IRANYekanXVF, sans-serif, tahoma;
-    --font-IRANYekanXFaNum: IRANYekanXFaNum, sans-serif, tahoma;
-    --font-YekanBakhVF: YekanBakhVF, sans-serif, tahoma;
+    --font-IRANYekanXVF: IRANYekanXVF;
+    --font-IRANYekanXFaNum: IRANYekanXFaNum;
+    --font-YekanBakhVF: YekanBakhVF;
 }
 
 @layer base {
@@ -62,20 +62,20 @@
     }
 
     body {
-        font-family: var(--font-IRANYekanXVF);
+        font-family: var(--font-IRANYekanXFaNum), sans-serif, tahoma;
         -moz-font-feature-settings: "ss03";
         -webkit-font-feature-settings: "ss03";
         font-feature-settings: "ss03";
-        font-variation-settings: "wght" 300, "dots" 1;
+        font-variation-settings: "wght" 400, "dots" 1;
     }
 
     @supports (font-variation-settings: normal) {
         body {
-            font-family: var(--font-IRANYekanXVF);
+            font-family: var(--font-IRANYekanXFaNum), sans-serif, tahoma;
             -moz-font-feature-settings: "ss03";
             -webkit-font-feature-settings: "ss03";
             font-feature-settings: "ss03";
-            font-variation-settings: "wght" 300, "dots" 1;
+            font-variation-settings: "wght" 400, "dots" 1;
         }
     }
 
@@ -103,5 +103,10 @@
         z-index: 5;
         height: 100%;
         border-radius: 50px;
+    }
+
+    .search-bar, .active-tab-indicator {
+        will-change: transform, width, left;
+        backface-visibility: hidden;
     }
 }

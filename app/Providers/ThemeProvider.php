@@ -25,7 +25,8 @@ class ThemeProvider extends ServiceProvider
          * روی اکشن 'after_setup_theme' وردپرس اجرا می‌کند، نیازی به نوشتن اکشن مجدد نیست
          * و کدهای تنظیمات قالب مستقیماً همین‌جا اجرا می‌شوند.
          */
-        $setup = new Setup();
-        $setup->init();
+//        $setup = new Setup();
+//        $setup->init();
+        (new Setup())->init();
     }
 }
